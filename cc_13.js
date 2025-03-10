@@ -43,7 +43,7 @@ function addEmployeeCard(name, position) {
 function highlightAllEmployees() {
     const cards = Array.from(document.querySelectorAll(".employee-card"));
 
-// Task 4: Implementing Removal of Employee Cards with Event Bubbling
+// Task 4 - Employee Card Removal with Event Bubbling
 document.getElementById("employeeContainer").addEventListener("click", function() {
     console.log("An employee card was clicked!");
 });
