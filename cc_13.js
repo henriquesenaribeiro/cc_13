@@ -38,3 +38,11 @@ function addEmployeeCard(name, position) {
     // Append card to container
     container.appendChild(card);
 }
+
+// Task 3: Bulk Update on Employee Cards
+function highlightAllEmployees() {
+    const cards = Array.from(document.querySelectorAll(".employee-card"));
+    cards.forEach(card => {
+        card.classList.add("highlight"); // Assume 'highlight' class is defined in CSS
+    });
+}
