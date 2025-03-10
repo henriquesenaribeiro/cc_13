@@ -51,3 +51,36 @@ document.getElementById("employeeContainer").addEventListener("click", function(
         card.classList.add("highlight"); // Assume 'highlight' class is defined in CSS
     });
 }
+
+// Task 5 - Inline Editing for Employee Cards
+function editEmployeeCard(card, nameElement, positionElement, removeButton, editButton) {
+    const nameInput = document.createElement("input");
+    nameInput.type = "text";
+    nameInput.value = nameElement.textContent;
+    
+    const positionInput = document.createElement("input");
+    positionInput.type = "text";
+    positionInput.value = positionElement.textContent;
+    
+    const saveButton = document.createElement("button");
+    saveButton.textContent = "Save";
+    saveButton.addEventListener("click", function() {
+        nameElement.textContent = nameInput.value;
+        positionElement.textContent = positionInput.value;
+        
+        card.replaceChild(nameElement, nameInput);
+        card.replaceChild(positionElement, positionInput);
+        card.replaceChild(editButton, saveButton);
+        
+        card.appendChild(editButton);
+        card.appendChild(removeButton);
+    });
+    
+    card.replaceChild(nameInput, nameElement);
+    card.replaceChild(positionInput, positionElement);
+    card.replaceChild(saveButton, editButton);
+}
+
+// Example usage
+addEmployeeCard("John Doe", "Software Engineer");
+addEmployeeCard("Jane Smith", "Product Manager");
