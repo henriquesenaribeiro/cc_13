@@ -1,4 +1,4 @@
-// Task 2: Adding Employee Cards Dynamically
+// Task 2 - Employee Cards Dynamic Addition
 function addEmployeeCard(name, position) {
     const container = document.getElementById("employeeContainer");
     
